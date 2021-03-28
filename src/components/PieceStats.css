@@ -1,3 +1,7 @@
+.piece-stats-container {
+    flex: .5;
+}
+
 .tooltip {
     position: relative;
 }
@@ -20,10 +24,6 @@
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
-}
-
-.stats-header {
-   padding-left: 16px;
 }
 
 .table-container {

@@ -3,14 +3,14 @@ import './PieceStats.css';
 import {featureSet} from './utils/features';
 import projectMap from './utils/projectMap';
 
-function PieceStats({tokens}) {
+function PieceStats({tokens, projectId}) {
   if(tokens.length === 0) {
     return null;
   }
 
-  const tokenFeatures = featureSet(tokens);
+  const tokenFeatures = featureSet(tokens, projectId);
 
-  const features = projectMap[33].features;
+  const features = projectMap[projectId].features;
   
   return (
     <div className="piece-stats-container">

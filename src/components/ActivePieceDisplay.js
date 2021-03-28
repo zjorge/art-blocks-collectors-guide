@@ -4,7 +4,7 @@ import './ActivePieceDisplay.css';
 import projectMap from './utils/projectMap';
 import FeaturesDisplay from './FeaturesDisplay';
 
-function ActivePieceDisplay({activeToken, setActiveToken}) {
+function ActivePieceDisplay({activeToken, setActiveToken, projectId}) {
   if (!activeToken) {
     return null;
   }
@@ -25,7 +25,7 @@ function ActivePieceDisplay({activeToken, setActiveToken}) {
           />
         </div>
         <FeaturesDisplay
-          features={projectMap[33].featureScript(activeToken.hash)}
+          features={projectMap[projectId].featureScript(activeToken.hash)}
         />
       </div>
     </div>

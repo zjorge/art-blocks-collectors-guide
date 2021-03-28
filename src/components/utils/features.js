@@ -1,8 +1,8 @@
 import projectMap from './projectMap';
 
-export function featureSet(tokens) {
+export function featureSet(tokens, projectId) {
   const featureDescriptions = tokens.map((token) => {
-    return projectMap[33].featureScript(token.hash);
+    return projectMap[projectId].featureScript(token.hash);
   });
 
   const featureSet = {}

@@ -1,0 +1,11 @@
+.project-information-container {
+    display: flex;
+    padding: 0 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .project-information-container {
+        display: block;
+    }
+}
+
