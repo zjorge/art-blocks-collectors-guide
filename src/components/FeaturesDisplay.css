@@ -1,3 +1,7 @@
 .feature-line {
     display: flex;
 }
+
+.feature-name {
+    font-weight: bold;
+}

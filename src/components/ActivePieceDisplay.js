@@ -1,19 +1,23 @@
 import React from 'react';
 import {artblocksUrl} from './consts';
 import './ActivePieceDisplay.css';
-import {empyreanFeatures} from './empyreanFeatureScript';
+import projectMap from './utils/projectMap';
 import FeaturesDisplay from './FeaturesDisplay';
 
-function ActivePieceDisplay({activeToken}) {
+function ActivePieceDisplay({activeToken, setActiveToken}) {
   if (!activeToken) {
     return null;
   }
   
-  console.log(empyreanFeatures(activeToken.hash));
-
   return (
     <div className="active-piece-container">
       <div className="active-piece-card">
+        <div
+          onClick={() => setActiveToken(null)}
+          className="exit-button"
+        >
+          X
+        </div>
         <div className="iframe-container">
           <iframe
             title={activeToken.id}
@@ -21,7 +25,7 @@ function ActivePieceDisplay({activeToken}) {
           />
         </div>
         <FeaturesDisplay
-          features={empyreanFeatures(activeToken.hash)}
+          features={projectMap[33].featureScript(activeToken.hash)}
         />
       </div>
     </div>

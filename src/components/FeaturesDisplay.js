@@ -6,7 +6,7 @@ function FeaturesDisplay({features}) {
     <div>
       {Object.keys(features).map((feature) => (
         <div className="feature-line">
-          <div>{feature}:&nbsp;</div>
+          <div className="feature-name">{feature}:&nbsp;</div>
           <div>{features[feature]}</div>
         </div>
       ))}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Web3 from 'web3';
 import PieceBrowser from './components/PieceBrowser';
+import PieceStats from './components/PieceStats';
 import abi from './api.json';
 
 const artblocksContract = "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270";
@@ -47,6 +48,7 @@ function App() {
 
   return (
     <div>
+      <PieceStats tokens={tokens}/>
       <PieceBrowser tokens={tokens}/>
     </div>
   );

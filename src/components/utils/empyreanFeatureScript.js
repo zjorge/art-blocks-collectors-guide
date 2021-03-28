@@ -1,5 +1,4 @@
 export function empyreanFeatures(tokenData) {
-
   const hashPairs = [];
   for (let j = 0; j < 32; j++) {
     hashPairs.push(tokenData.slice(2 + j * 2, 4 + j * 2));
@@ -192,3 +191,5 @@ export function empyreanFeatures(tokenData) {
       return decPairs[index]/255 * (max - min) + min
   }
 }
+
+

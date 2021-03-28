@@ -5,16 +5,9 @@ import ActivePieceDisplay from './ActivePieceDisplay';
 function PieceBrowser({tokens}) {
   const [activeToken, setActiveToken] = useState(null);
 
-  useEffect(() => {
-    if (tokens.length === 0) {
-      return;
-    }
-    setActiveToken(tokens[0]);
-  }, [tokens]);
-
   return (
     <div>
-      <ActivePieceDisplay activeToken={activeToken}/>
+      <ActivePieceDisplay activeToken={activeToken} setActiveToken={setActiveToken}/>
       <TokenGrid tokens={tokens} setActiveToken={setActiveToken}/>
     </div>
   );

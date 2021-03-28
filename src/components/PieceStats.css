@@ -1,0 +1,48 @@
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: fit-content;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 60%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.stats-header {
+   padding-left: 16px;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+
+.center-column {
+    text-align: center;
+}
+
+.missing {
+    opacity: .5;
+}
+
+.feature-display {
+    display: flex;
+}
+
+.feature-display-title {
+    font-weight: bold;
+}
