@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/art-blocks-collectors-guide/static/css/main.d481cbcd.chunk.css",
-    "main.js": "/art-blocks-collectors-guide/static/js/main.4874b1e2.chunk.js",
-    "main.js.map": "/art-blocks-collectors-guide/static/js/main.4874b1e2.chunk.js.map",
+    "main.js": "/art-blocks-collectors-guide/static/js/main.0a8404f5.chunk.js",
+    "main.js.map": "/art-blocks-collectors-guide/static/js/main.0a8404f5.chunk.js.map",
     "runtime-main.js": "/art-blocks-collectors-guide/static/js/runtime-main.6fc4fd2f.js",
     "runtime-main.js.map": "/art-blocks-collectors-guide/static/js/runtime-main.6fc4fd2f.js.map",
     "static/js/2.5799d339.chunk.js": "/art-blocks-collectors-guide/static/js/2.5799d339.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.6fc4fd2f.js",
     "static/js/2.5799d339.chunk.js",
     "static/css/main.d481cbcd.chunk.css",
-    "static/js/main.4874b1e2.chunk.js"
+    "static/js/main.0a8404f5.chunk.js"
   ]
 }
