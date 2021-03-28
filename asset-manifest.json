@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/art-blocks-collectors-guide/static/css/main.d481cbcd.chunk.css",
-    "main.js": "/art-blocks-collectors-guide/static/js/main.0a8404f5.chunk.js",
-    "main.js.map": "/art-blocks-collectors-guide/static/js/main.0a8404f5.chunk.js.map",
-    "runtime-main.js": "/art-blocks-collectors-guide/static/js/runtime-main.6fc4fd2f.js",
-    "runtime-main.js.map": "/art-blocks-collectors-guide/static/js/runtime-main.6fc4fd2f.js.map",
-    "static/js/2.5799d339.chunk.js": "/art-blocks-collectors-guide/static/js/2.5799d339.chunk.js",
-    "static/js/2.5799d339.chunk.js.map": "/art-blocks-collectors-guide/static/js/2.5799d339.chunk.js.map",
-    "static/js/3.2255dc92.chunk.js": "/art-blocks-collectors-guide/static/js/3.2255dc92.chunk.js",
-    "static/js/3.2255dc92.chunk.js.map": "/art-blocks-collectors-guide/static/js/3.2255dc92.chunk.js.map",
-    "index.html": "/art-blocks-collectors-guide/index.html",
-    "static/css/main.d481cbcd.chunk.css.map": "/art-blocks-collectors-guide/static/css/main.d481cbcd.chunk.css.map",
-    "static/js/2.5799d339.chunk.js.LICENSE.txt": "/art-blocks-collectors-guide/static/js/2.5799d339.chunk.js.LICENSE.txt"
+    "main.css": "/empyrean-collectors-guide/static/css/main.aed90adc.chunk.css",
+    "main.js": "/empyrean-collectors-guide/static/js/main.acb1fdad.chunk.js",
+    "main.js.map": "/empyrean-collectors-guide/static/js/main.acb1fdad.chunk.js.map",
+    "runtime-main.js": "/empyrean-collectors-guide/static/js/runtime-main.e7dc45a9.js",
+    "runtime-main.js.map": "/empyrean-collectors-guide/static/js/runtime-main.e7dc45a9.js.map",
+    "static/js/2.5c6ba281.chunk.js": "/empyrean-collectors-guide/static/js/2.5c6ba281.chunk.js",
+    "static/js/2.5c6ba281.chunk.js.map": "/empyrean-collectors-guide/static/js/2.5c6ba281.chunk.js.map",
+    "static/js/3.56ab1558.chunk.js": "/empyrean-collectors-guide/static/js/3.56ab1558.chunk.js",
+    "static/js/3.56ab1558.chunk.js.map": "/empyrean-collectors-guide/static/js/3.56ab1558.chunk.js.map",
+    "index.html": "/empyrean-collectors-guide/index.html",
+    "static/css/main.aed90adc.chunk.css.map": "/empyrean-collectors-guide/static/css/main.aed90adc.chunk.css.map",
+    "static/js/2.5c6ba281.chunk.js.LICENSE.txt": "/empyrean-collectors-guide/static/js/2.5c6ba281.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6fc4fd2f.js",
-    "static/js/2.5799d339.chunk.js",
-    "static/css/main.d481cbcd.chunk.css",
-    "static/js/main.0a8404f5.chunk.js"
+    "static/js/runtime-main.e7dc45a9.js",
+    "static/js/2.5c6ba281.chunk.js",
+    "static/css/main.aed90adc.chunk.css",
+    "static/js/main.acb1fdad.chunk.js"
   ]
 }
