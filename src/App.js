@@ -60,7 +60,7 @@ function App() {
   return (
     <div>
       <nav>
-        <div className="title">Art Blocks Collectors Guide</div>
+        <div className="title">Empyrean Collectors Guide</div>
         <MetaMaskButton 
           web3={web3}
           account={account}
