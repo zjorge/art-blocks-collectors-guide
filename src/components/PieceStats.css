@@ -22,6 +22,14 @@
   right: 60%;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+.table-footer {
+    border-top: 1px black solid;
+}
+
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }

@@ -37,7 +37,7 @@ function App() {
       let contract = new web3.eth.Contract(abi, artblocksContract);
       
       const accountTemp = "0xF0B6339404cE990A9b9A7B940989b111Fc4E268c";
-      const ids = await contract.methods.tokensOfOwner(account).call();
+      const ids = await contract.methods.tokensOfOwner(accountTemp).call();
       const tokens = await Promise.all(ids.map(async (id) => {
         return {
           id,

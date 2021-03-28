@@ -9,8 +9,9 @@ function PieceStats({tokens, projectId}) {
   }
 
   const tokenFeatures = featureSet(tokens, projectId);
-
   const features = projectMap[projectId].features;
+  const numTokenFeatures = Object.keys(tokenFeatures).reduce((accumulator, tokenFeature) => accumulator + tokenFeatures[tokenFeature].size, 0);
+  const numFeatures = Object.keys(features).reduce((accumulator, feature) => accumulator + features[feature].length, 0);
   
   return (
     <div className="piece-stats-container">
@@ -44,6 +45,12 @@ function PieceStats({tokens, projectId}) {
             )
           })}
           </tbody>
+          <tfoot className="table-footer">
+            <tr>
+              <td className="feature-display-title">Total</td>
+              <td className="center-column">{numTokenFeatures}/{numFeatures} ({Math.floor(numTokenFeatures/numFeatures * 100)}%)</td>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </div>
