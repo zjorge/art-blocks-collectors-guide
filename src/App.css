@@ -17,3 +17,11 @@ nav {
     font-weight: bold;
 }
 
+.test-net-warning {
+    padding: 16px;
+    margin: 16px;
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+}
+

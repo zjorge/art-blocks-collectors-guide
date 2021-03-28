@@ -10,6 +10,7 @@ const artblocksContract = "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270";
 
 function App() {
   const [account, setAccount] = useState(null);
+  const [network, setNetwork] = useState("main");
   const [projectId] = useState(33);
   const [projectInfo, setProjectInfo] = useState(null);
   const [allTokens, setAllTokens] = useState([]);
@@ -17,6 +18,10 @@ function App() {
 
   useEffect(() => {
     requestAccount(web3, setAccount);
+    async function getNetwork() {
+      setNetwork(await web3.eth.net.getNetworkType());
+    }
+    getNetwork();
   }, [web3]);
 
   useEffect(() => {
@@ -35,7 +40,6 @@ function App() {
     async function fetchTokens() {
       let contract = new web3.eth.Contract(abi, artblocksContract);
       
-      const accountTemp = "0xF0B6339404cE990A9b9A7B940989b111Fc4E268c";
       const ids = await contract.methods.tokensOfOwner(account).call();
       const tokens = await Promise.all(ids.map(async (id) => {
         return {
@@ -43,7 +47,6 @@ function App() {
           hash: await contract.methods.tokenIdToHash(id).call()
         };
       }));
-      console.log(tokens);
       setAllTokens(tokens);
     }
     
@@ -65,6 +68,7 @@ function App() {
           requestAccount={requestAccount}
         />
       </nav>
+      {network !== "main" && <div className="test-net-warning">This app only works on main net. Please check your MetaMask settings and try again.</div>}
       <ProjectInformation 
         projectInfo={projectInfo}
         tokens={tokens}
