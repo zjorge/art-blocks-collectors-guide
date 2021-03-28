@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Web3 from 'web3';
 import PieceBrowser from './components/PieceBrowser';
+import MetaMaskButton from './components/MetaMaskButton';
 import ProjectInformation from './components/ProjectInformation';
 import abi from './api.json';
 
@@ -15,9 +16,7 @@ function App() {
   const [web3] = useState(new Web3(Web3.givenProvider || 'ws://some.local-or-remote.node:8546'));
 
   useEffect(() => {
-    getAccounts(web3, (result) => {
-      setAccount(result[0]);
-    });
+    requestAccount(web3, setAccount);
   }, [web3]);
 
   useEffect(() => {
@@ -37,13 +36,14 @@ function App() {
       let contract = new web3.eth.Contract(abi, artblocksContract);
       
       const accountTemp = "0xF0B6339404cE990A9b9A7B940989b111Fc4E268c";
-      const ids = await contract.methods.tokensOfOwner(accountTemp).call();
+      const ids = await contract.methods.tokensOfOwner(account).call();
       const tokens = await Promise.all(ids.map(async (id) => {
         return {
           id,
           hash: await contract.methods.tokenIdToHash(id).call()
         };
       }));
+      console.log(tokens);
       setAllTokens(tokens);
     }
     
@@ -58,6 +58,12 @@ function App() {
     <div>
       <nav>
         <div className="title">Art Blocks Collectors Guide</div>
+        <MetaMaskButton 
+          web3={web3}
+          account={account}
+          setAccount={setAccount}
+          requestAccount={requestAccount}
+        />
       </nav>
       <ProjectInformation 
         projectInfo={projectInfo}
@@ -69,14 +75,9 @@ function App() {
   );
 }
 
-function getAccounts(web3, callback) {
-    web3.eth.getAccounts((error,result) => {
-        if (error) {
-            console.log(error);
-        } else {
-            callback(result);
-        }
-    });
+async function requestAccount(web3, setAccount) {
+    const accounts = await web3.eth.requestAccounts();
+    setAccount(accounts[0]);
 }
 
 export default App;

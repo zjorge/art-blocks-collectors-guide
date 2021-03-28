@@ -9,9 +9,11 @@ nav {
     box-shadow: rgb(0 0 0 / 15%) 0px 5px 20px;
     height: 50px;
     align-items: center;
+    padding: 0 16px;
+    justify-content: space-between;
 }
 
 .title {
-    padding: 0 16px;
+    font-weight: bold;
 }
 
