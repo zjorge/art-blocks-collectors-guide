@@ -1,14 +1,30 @@
 .active-piece-container {
-    padding: 16px;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.active-piece-card {
+    width: 50%;
+    border: 1px black solid;
+    padding: 16px;
+    display: flex;
+    align-items: center;
 }
 
 .iframe-container {
     position: relative;
-    width: 300px;
+    width: 50%;
     height: 300px;
-    padding-right: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .active-piece-card {
+        display: block;
+    }
+    .iframe-container {
+        width: 100%;
+    }
 }
 
 .iframe-container:before {
