@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/art-blocks-collectors-guide/static/css/main.d481cbcd.chunk.css",
+    "main.js": "/art-blocks-collectors-guide/static/js/main.55051e44.chunk.js",
+    "main.js.map": "/art-blocks-collectors-guide/static/js/main.55051e44.chunk.js.map",
+    "runtime-main.js": "/art-blocks-collectors-guide/static/js/runtime-main.6fc4fd2f.js",
+    "runtime-main.js.map": "/art-blocks-collectors-guide/static/js/runtime-main.6fc4fd2f.js.map",
+    "static/js/2.5799d339.chunk.js": "/art-blocks-collectors-guide/static/js/2.5799d339.chunk.js",
+    "static/js/2.5799d339.chunk.js.map": "/art-blocks-collectors-guide/static/js/2.5799d339.chunk.js.map",
+    "static/js/3.2255dc92.chunk.js": "/art-blocks-collectors-guide/static/js/3.2255dc92.chunk.js",
+    "static/js/3.2255dc92.chunk.js.map": "/art-blocks-collectors-guide/static/js/3.2255dc92.chunk.js.map",
+    "index.html": "/art-blocks-collectors-guide/index.html",
+    "static/css/main.d481cbcd.chunk.css.map": "/art-blocks-collectors-guide/static/css/main.d481cbcd.chunk.css.map",
+    "static/js/2.5799d339.chunk.js.LICENSE.txt": "/art-blocks-collectors-guide/static/js/2.5799d339.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6fc4fd2f.js",
+    "static/js/2.5799d339.chunk.js",
+    "static/css/main.d481cbcd.chunk.css",
+    "static/js/main.55051e44.chunk.js"
+  ]
+}
