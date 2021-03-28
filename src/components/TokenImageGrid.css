@@ -1,3 +1,9 @@
 .image-grid {
-    display: flex;
+    display: inline-grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.token-image {
+    width: 100%;
+    cursor: pointer;
 }
