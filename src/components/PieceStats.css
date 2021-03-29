@@ -4,6 +4,7 @@
 
 .tooltip {
     position: relative;
+    color: #4169E1;
 }
 
 .tooltip .tooltiptext {
