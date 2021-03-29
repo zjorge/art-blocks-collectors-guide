@@ -68,7 +68,7 @@ export function empyreanFeatures(tokenData) {
   let nodeRatio = 'N/A';
   let nodeRotationStyle = 'N/A'
   let maxNodeRotation = 'N/A';
-  if (!map_v(13) > .25 || !map_v(14) > .25) {
+  if (map_v(13) <= .25 || map_v(14) <= .25) {
     const nodeRotationStyleBool = map_v(15) < .3;
     nodeRotationStyle = nodeRotationStyleBool ? 'True': 'False';
     let maxNodeRotationNum = map_v(16, Math.PI, 4 * Math.PI);
