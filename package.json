@@ -1,6 +1,5 @@
 {
   "name": "empyrean-collectors-guide",
-  "homepage": "https://asupkay.github.io/empyrean-collectors-guide",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
