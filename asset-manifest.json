@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/empyrean-collectors-guide/static/css/main.aed90adc.chunk.css",
-    "main.js": "/empyrean-collectors-guide/static/js/main.acb1fdad.chunk.js",
-    "main.js.map": "/empyrean-collectors-guide/static/js/main.acb1fdad.chunk.js.map",
-    "runtime-main.js": "/empyrean-collectors-guide/static/js/runtime-main.e7dc45a9.js",
-    "runtime-main.js.map": "/empyrean-collectors-guide/static/js/runtime-main.e7dc45a9.js.map",
-    "static/js/2.5c6ba281.chunk.js": "/empyrean-collectors-guide/static/js/2.5c6ba281.chunk.js",
-    "static/js/2.5c6ba281.chunk.js.map": "/empyrean-collectors-guide/static/js/2.5c6ba281.chunk.js.map",
-    "static/js/3.56ab1558.chunk.js": "/empyrean-collectors-guide/static/js/3.56ab1558.chunk.js",
-    "static/js/3.56ab1558.chunk.js.map": "/empyrean-collectors-guide/static/js/3.56ab1558.chunk.js.map",
-    "index.html": "/empyrean-collectors-guide/index.html",
-    "static/css/main.aed90adc.chunk.css.map": "/empyrean-collectors-guide/static/css/main.aed90adc.chunk.css.map",
-    "static/js/2.5c6ba281.chunk.js.LICENSE.txt": "/empyrean-collectors-guide/static/js/2.5c6ba281.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.aed90adc.chunk.css",
+    "main.js": "/static/js/main.acb1fdad.chunk.js",
+    "main.js.map": "/static/js/main.acb1fdad.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.05583d4b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.05583d4b.js.map",
+    "static/js/2.ad5ea344.chunk.js": "/static/js/2.ad5ea344.chunk.js",
+    "static/js/2.ad5ea344.chunk.js.map": "/static/js/2.ad5ea344.chunk.js.map",
+    "static/js/3.56ab1558.chunk.js": "/static/js/3.56ab1558.chunk.js",
+    "static/js/3.56ab1558.chunk.js.map": "/static/js/3.56ab1558.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.aed90adc.chunk.css.map": "/static/css/main.aed90adc.chunk.css.map",
+    "static/js/2.ad5ea344.chunk.js.LICENSE.txt": "/static/js/2.ad5ea344.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e7dc45a9.js",
-    "static/js/2.5c6ba281.chunk.js",
+    "static/js/runtime-main.05583d4b.js",
+    "static/js/2.ad5ea344.chunk.js",
     "static/css/main.aed90adc.chunk.css",
     "static/js/main.acb1fdad.chunk.js"
   ]
