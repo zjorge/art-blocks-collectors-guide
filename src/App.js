@@ -80,8 +80,7 @@ function App() {
 }
 
 async function requestAccount(web3, setAccount) {
-    //const accounts = await web3.eth.requestAccounts();
-    const accounts = ["0xf3860788d1597cecf938424baabe976fac87dc26"]
+    const accounts = await web3.eth.requestAccounts();
     setAccount(accounts[0]);
 }
 
