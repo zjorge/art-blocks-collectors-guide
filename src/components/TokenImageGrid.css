@@ -9,7 +9,33 @@
     }
 }
 
+.token-image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.token-image-container:hover .hover-container {
+    visibility: visible;
+}
+
+.hover-container {
+    cursor: pointer;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.hover-text {
+    color: white;
+}
+
 .token-image {
     width: 100%;
-    cursor: pointer;
 }

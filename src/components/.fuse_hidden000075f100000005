@@ -1,0 +1,29 @@
+import React from 'react';
+import './TokenImageGrid.css';
+import {artblocksApiUrl} from './consts';
+
+
+function TokenImageGrid({tokens, setActiveToken}) {
+  const onTokenClick = (token) => {
+    return () => {
+      setActiveToken(token);
+    }
+  }
+  
+  return (
+    <div className="image-grid">
+      {tokens.map(token => {
+        return (
+          <img 
+            className="token-image"
+            onClick={onTokenClick(token)}
+            key={token.id}
+            src={`${artblocksApiUrl}/image/${token.id}`}
+            alt={token}
+          />)
+      })}
+    </div>
+  ) 
+}
+
+export default TokenImageGrid;

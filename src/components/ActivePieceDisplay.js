@@ -1,5 +1,6 @@
 import React from 'react';
-import {artblocksUrl} from './consts';
+import {artblocksUrl, artblocksApiUrl} from './consts';
+import {formatTokenId} from './utils/tokenId';
 import './ActivePieceDisplay.css';
 import projectMap from './utils/projectMap';
 import FeaturesDisplay from './FeaturesDisplay';
@@ -21,12 +22,16 @@ function ActivePieceDisplay({activeToken, setActiveToken, projectId}) {
         <div className="iframe-container">
           <iframe
             title={activeToken.id}
-            src={`${artblocksUrl}/generator/${activeToken.id}`}
+            src={`${artblocksApiUrl}/generator/${activeToken.id}`}
           />
         </div>
-        <FeaturesDisplay
-          features={projectMap[projectId].featureScript(activeToken.hash)}
-        />
+        <div>
+          <h3>Empyrean #{formatTokenId(activeToken.id)}</h3>
+          <FeaturesDisplay
+            features={projectMap[projectId].featureScript(activeToken.hash)}
+          />
+          <a href={`${artblocksUrl}/token/${activeToken.id}`}>View on Art Blocks</a>
+        </div>
       </div>
     </div>
   );
