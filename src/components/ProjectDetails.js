@@ -8,7 +8,7 @@ function ProjectDetails({projectInfo}) {
   const {projectName, artist, description, website} = projectInfo
   return (
     <div className="project-details-container">
-      <h2>Info</h2>
+      <h2>Piece Info</h2>
       <h3>{projectName} by {artist}</h3>
       <a href={website}>Artist Website</a>
       <p><span className="bold-text">Description: </span>{description}</p>

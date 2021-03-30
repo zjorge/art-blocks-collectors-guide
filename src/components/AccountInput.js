@@ -15,7 +15,7 @@ function AccountInput({setAccount}) {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Name:
+        Wallet ID:&nbsp;
         <input type="text" value={inputAccount} onChange={handleChange} />
       </label>
       <input type="submit" value="Submit" />
