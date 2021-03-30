@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Web3 from 'web3';
 import MetaMaskButton from './components/MetaMaskButton';
@@ -13,26 +13,27 @@ function App() {
 
   const [web3] = useState(new Web3(Web3.givenProvider || 'ws://some.local-or-remote.node:8546'));
 
-  const requestAccount = useCallback(async () => {
+  const requestAccount = useCallback(() => {
       const accounts = await web3.eth.requestAccounts();
       setUserAccount(accounts[0]);
       if (!viewAccount) {
         setViewAccount(accounts[0])
       }
-  }, [web3, viewAccount])
+  })
 
   useEffect(() => {
+    requestAccount(web3, setUserAccount, setViewAccount);
     requestAccount();
     async function getNetwork() {
       setNetwork(await web3.eth.net.getNetworkType());
     }
     getNetwork();
-  }, [web3]);
+  }, [web3, requestAccount]);
 
   return (
     <div>
       <nav>
-        <div className="title">Clamflelmo by Generative Artworks</div>
+        <div className="title">Empyrean Collectors Guide</div>
         <MetaMaskButton 
           web3={web3}
           account={userAccount}
@@ -42,9 +43,9 @@ function App() {
       </nav>
       {network !== "main" && <div className="test-net-warning">This app only works on main net. Please check your MetaMask settings and try again.</div>}
       <AccountInput
+        account={viewAccount}
         setAccount={setViewAccount}
       />
-      
       <ProjectView
         account={viewAccount}
         web3={web3}

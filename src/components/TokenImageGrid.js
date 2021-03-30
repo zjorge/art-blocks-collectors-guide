@@ -23,7 +23,7 @@ function TokenImageGrid({tokens, setActiveToken}) {
             <img 
               className="token-image"
               src={`${artblocksApiUrl}/image/${token.id}`}
-              alt={token}
+              alt={token.id}
             />
             <div className="hover-container">
               <div className="hover-text">

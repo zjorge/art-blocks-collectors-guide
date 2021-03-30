@@ -1,7 +1,7 @@
 import React from 'react';
 import './MetaMaskButton.css';
 
-function MetaMaskButton({web3, setAccount, requestAccount, account}) {
+function MetaMaskButton({requestAccount, account}) {
   if (account) {
     return (
       <div>{account.slice(0, 7)}...</div>
@@ -11,7 +11,7 @@ function MetaMaskButton({web3, setAccount, requestAccount, account}) {
   return (
     <div
       className="metamask-button"
-      onClick={() => requestAccount(web3, setAccount)}
+      onClick={() => requestAccount()}
     >
       Connect with MetaMask
     </div>
