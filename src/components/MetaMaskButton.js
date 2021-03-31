@@ -1,10 +1,11 @@
 import React from 'react';
 import './MetaMaskButton.css';
+import {truncateAddress} from './utils/walletAddress';
 
 function MetaMaskButton({requestAccount, account}) {
   if (account) {
     return (
-      <div>{account.slice(0, 7)}...</div>
+      <div>{truncateAddress(account)}</div>
     )
   }
 

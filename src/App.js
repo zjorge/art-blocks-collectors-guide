@@ -3,7 +3,7 @@ import './App.css';
 import Web3 from 'web3';
 import MetaMaskButton from './components/MetaMaskButton';
 import ProjectView from './components/ProjectView';
-import AccountInput from './components/AccountInput';
+import ViewAccountHandling from './components/ViewAccountHandling';
 
 function App() {
   const [userAccount, setUserAccount] = useState(null);
@@ -44,8 +44,10 @@ function App() {
         />
       </nav>
       {network !== "main" && <div className="test-net-warning">This app only works on main net. Please check your MetaMask settings and try again.</div>}
-      <AccountInput
-        setAccount={setViewAccount}
+      <ViewAccountHandling
+        setViewAccount={setViewAccount}
+        viewAccount={viewAccount}
+        userAccount={userAccount}
       />
       
       <ProjectView

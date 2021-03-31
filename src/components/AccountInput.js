@@ -1,25 +1,44 @@
 import React, {useState} from 'react';
+import {isAddress} from './utils/walletAddress';
+import './AccountInput.css';
 
-function AccountInput({setAccount}) {
+function AccountInput({setAccount, userAccount}) {
   const [inputAccount, setInputAccount] = useState("");
+  const [error, setError] = useState("");
 
   function handleChange(event) {
     setInputAccount(event.target.value);
   }
 
   function handleSubmit(event) {
-    setAccount(inputAccount);
     event.preventDefault();
+
+    if (inputAccount === "") {
+      setAccount(userAccount);
+      setError("");
+      return;
+    }
+
+    if (!isAddress(inputAccount)) {
+      setError("Address is not valid");
+      return;
+    }
+
+    setError("");
+    setAccount(inputAccount);
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Wallet ID:&nbsp;
-        <input type="text" value={inputAccount} onChange={handleChange} />
-      </label>
-      <input type="submit" value="Submit" />
-    </form>
+    <div>
+      <form className="form" onSubmit={handleSubmit}>
+        <label className="label-container">
+          <span className="label">Wallet ID:&nbsp;</span>
+          <input className="wallet-input" type="text" value={inputAccount} onChange={handleChange} />
+        </label>
+        <input className="submit-button" type="submit" value="Submit" />
+      </form>
+      <div>{error}</div>
+    </div>
   );
 }
 
