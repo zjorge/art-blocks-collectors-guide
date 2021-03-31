@@ -36,6 +36,7 @@ function ProjectView({projectId, account, contract}) {
 
   const regex = new RegExp(`^${projectId}\\d+`, 'g');
   const tokens = allTokens.filter(token => token.id.match(regex));
+  tokens.sort((tokenA, tokenB) => (tokenA.id < tokenB.id) ? -1: 1);
 
   return (
     <div>
