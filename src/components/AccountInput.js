@@ -30,7 +30,7 @@ function AccountInput({setAccount, userAccount}) {
   }
 
   return (
-    <div>
+    <div className="form-container">
       <form className="form" onSubmit={handleSubmit}>
         <label className="label-container">
           <span className="label">Wallet ID:&nbsp;</span>
