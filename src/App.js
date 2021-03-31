@@ -4,6 +4,8 @@ import Web3 from 'web3';
 import MetaMaskButton from './components/MetaMaskButton';
 import ProjectView from './components/ProjectView';
 import ViewAccountHandling from './components/ViewAccountHandling';
+import abi from './api.json';
+const artblocksContract = "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270";
 
 function App() {
   const [userAccount, setUserAccount] = useState(null);
@@ -12,6 +14,7 @@ function App() {
   const [projectId] = useState(33);
 
   const [web3] = useState(new Web3(Web3.givenProvider || 'ws://some.local-or-remote.node:8546'));
+  const [contract] = useState(new web3.eth.Contract(abi, artblocksContract));
 
   const requestAccount = useCallback(async () => {
       const accounts = await web3.eth.requestAccounts();
@@ -45,6 +48,8 @@ function App() {
       </nav>
       {network !== "main" && <div className="test-net-warning">This app only works on main net. Please check your MetaMask settings and try again.</div>}
       <ViewAccountHandling
+        contract={contract}
+        projectId={projectId}
         setViewAccount={setViewAccount}
         viewAccount={viewAccount}
         userAccount={userAccount}
@@ -52,7 +57,7 @@ function App() {
       
       <ProjectView
         account={viewAccount}
-        web3={web3}
+        contract={contract}
         projectId={projectId}
       />
     </div>

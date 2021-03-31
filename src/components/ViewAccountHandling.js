@@ -1,15 +1,34 @@
 import React from 'react';
 import AccountInput from './AccountInput';
 import {truncateAddress} from './utils/walletAddress';
-import './ViewAccountHandling.css'
+import './ViewAccountHandling.css';
+import './button.css';
 
-function ViewAccountHandling({viewAccount, userAccount, setViewAccount}) {
+function ViewAccountHandling({contract, viewAccount, userAccount, setViewAccount, projectId}) {
+  async function getRandomAccount() {
+    const tokens = await contract.methods.projectShowAllTokens(projectId).call();
+    const owners = new Set();
+    await Promise.all(tokens.map(async (token) => {
+      owners.add(await contract.methods.ownerOf(token).call())
+    }));
+    const ownerArray = Array.from(owners);
+    setViewAccount(ownerArray[Math.floor(Math.random() * ownerArray.length)]); 
+  };
+
   return (
     <div className="container">
-      <AccountInput
-        setAccount={setViewAccount}
-        userAccount={userAccount}
-      />
+      <div className="account-search-container">
+        <AccountInput
+          setAccount={setViewAccount}
+          userAccount={userAccount}
+        />
+        <button 
+          className="random-account-button button" 
+          onClick={getRandomAccount}
+        >
+          Get Random Account
+        </button>
+      </div>
       <h2>You are viewing {viewAccount === userAccount ? "your" : `${truncateAddress(viewAccount)}'s`} profile</h2> 
     </div>
   );

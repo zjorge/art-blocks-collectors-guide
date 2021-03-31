@@ -3,3 +3,18 @@
     padding-right: 16px;
     padding-top: 16px;
 }
+
+.account-search-container {
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .account-search-container {
+        display: block;
+    }
+
+    .random-account-button {
+        width: 100%;
+    }
+}
+

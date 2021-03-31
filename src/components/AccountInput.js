@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {isAddress} from './utils/walletAddress';
 import './AccountInput.css';
+import './button.css';
 
 function AccountInput({setAccount, userAccount}) {
   const [inputAccount, setInputAccount] = useState("");
@@ -35,7 +36,7 @@ function AccountInput({setAccount, userAccount}) {
           <span className="label">Wallet ID:&nbsp;</span>
           <input className="wallet-input" type="text" value={inputAccount} onChange={handleChange} />
         </label>
-        <input className="submit-button" type="submit" value="Submit" />
+        <input className="button" type="submit" value="Submit" />
       </form>
       <div>{error}</div>
     </div>
