@@ -16,9 +16,7 @@ function ProjectView({projectId, account, contract}) {
 
   useEffect(() => {
     if (!account) {
-      if (allTokens) {
-        setAllTokens(null);
-      }
+      setAllTokens(null);
       return; 
     }
 

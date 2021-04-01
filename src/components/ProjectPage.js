@@ -10,12 +10,15 @@ function ProjectPage({web3, userAccount}) {
   const [projectId] = useState(33);
 
   useEffect(() => {
+    setViewAccount(userAccount);
+  }, [userAccount]);
+
+  useEffect(() => {
     if (viewAccount === null) {
       setViewAccount(userAccount);
     }
-  }, [viewAccount]);
+  }, [viewAccount, userAccount]);
 
-  console.log(viewAccount);
   if (!web3._provider) {
     return (<div className="test-net-warning">This site requires MetaMask</div>);
   }
