@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ViewAccountHandling from './ViewAccountHandling';
 import ProjectView from './ProjectView';
 import abi from '../api.json';
@@ -9,10 +9,13 @@ function ProjectPage({web3, userAccount}) {
   const [viewAccount, setViewAccount] = useState(null);
   const [projectId] = useState(33);
 
-  if (viewAccount === null && userAccount) {
-    setViewAccount(userAccount);
-  }
+  useEffect(() => {
+    if (viewAccount === null) {
+      setViewAccount(userAccount);
+    }
+  }, [viewAccount]);
 
+  console.log(viewAccount);
   if (!web3._provider) {
     return (<div className="test-net-warning">This site requires MetaMask</div>);
   }

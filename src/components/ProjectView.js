@@ -5,7 +5,7 @@ import ProjectInformation from './ProjectInformation';
 function ProjectView({projectId, account, contract}) {
 
   const [projectInfo, setProjectInfo] = useState(null);
-  const [allTokens, setAllTokens] = useState([]);
+  const [allTokens, setAllTokens] = useState(null);
 
   useEffect(() => {
     async function fetchProjectDetails() {
@@ -16,6 +16,9 @@ function ProjectView({projectId, account, contract}) {
 
   useEffect(() => {
     if (!account) {
+      if (allTokens) {
+        setAllTokens(null);
+      }
       return; 
     }
 
@@ -35,8 +38,10 @@ function ProjectView({projectId, account, contract}) {
    }, [account, contract]);
 
   const regex = new RegExp(`^${projectId}\\d+`, 'g');
-  const tokens = allTokens.filter(token => token.id.match(regex));
-  tokens.sort((tokenA, tokenB) => (tokenA.id < tokenB.id) ? -1: 1);
+  const tokens = !allTokens ? null : allTokens.filter(token => token.id.match(regex));
+  if (tokens) {
+    tokens.sort((tokenA, tokenB) => (tokenA.id < tokenB.id) ? -1: 1);
+  }
 
   return (
     <div>

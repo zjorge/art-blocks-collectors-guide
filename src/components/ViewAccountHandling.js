@@ -29,7 +29,9 @@ function ViewAccountHandling({contract, viewAccount, userAccount, setViewAccount
           Get Random Account
         </button>
       </div>
-      <h2>You are viewing {viewAccount === userAccount ? "your" : `${truncateAddress(viewAccount)}'s`} collection</h2> 
+      {(viewAccount || userAccount) &&
+        <h2>You are viewing {viewAccount === userAccount ? "your" : `${truncateAddress(viewAccount)}'s`} collection</h2> 
+      }
     </div>
   );
 }
