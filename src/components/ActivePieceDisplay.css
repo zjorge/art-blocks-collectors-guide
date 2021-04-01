@@ -35,6 +35,15 @@
 @media screen and (max-width: 768px) {
     .active-piece-card {
         display: block;
+        max-height: 100%;
+    }
+
+    .active-piece-container {
+        align-items: normal;
+    }
+
+    .info {
+        font-size: 1.6vh;
     }
 
     .active-piece-card {

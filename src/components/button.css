@@ -4,6 +4,7 @@
     background-color: #4169E1;
     color: white;
     padding: 10px;
+    cursor: pointer;
 }
 
 .button:focus {

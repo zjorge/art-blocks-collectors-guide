@@ -34,11 +34,13 @@ function AccountInput({setAccount, userAccount}) {
       <form className="form" onSubmit={handleSubmit}>
         <label className="label-container">
           <span className="label">Wallet ID:&nbsp;</span>
-          <input className="wallet-input" type="text" value={inputAccount} onChange={handleChange} />
+          <div className="account-input-container">
+            <input className="wallet-input" type="text" value={inputAccount} onChange={handleChange} />
+            <div className="account-error-text">{error}</div>
+          </div>
         </label>
         <input className="button" type="submit" value="Submit" />
       </form>
-      <div>{error}</div>
     </div>
   );
 }

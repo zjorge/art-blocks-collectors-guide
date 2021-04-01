@@ -14,12 +14,28 @@
     align-items: center;
 }
 
+.account-input-container {
+    flex: 1;
+    display: flex;
+    position: relative;
+}
+
+.account-error-text {
+    position: absolute;
+    user-select: none;
+    top: 2px;
+    font-size: 12px;
+    left: 10px;
+    color: red;
+    text-align: center;
+}
+
 .label {
     font-weight: bold;
 }
 
 .wallet-input {
-    flex: 1;
+    width: 100%;
     border: 2px solid #eee;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
     border-radius: 10px;

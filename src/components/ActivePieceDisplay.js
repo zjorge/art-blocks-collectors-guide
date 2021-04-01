@@ -25,7 +25,7 @@ function ActivePieceDisplay({activeToken, setActiveToken, projectId}) {
             src={`${artblocksApiUrl}/generator/${activeToken.id}`}
           />
         </div>
-        <div>
+        <div className="info">
           <h3>Empyrean #{formatTokenId(activeToken.id)}</h3>
           <FeaturesDisplay
             features={projectMap[projectId].featureScript(activeToken.hash)}
