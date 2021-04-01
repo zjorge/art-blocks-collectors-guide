@@ -3,7 +3,8 @@ import ViewAccountHandling from './ViewAccountHandling';
 import ProjectView from './ProjectView';
 import {urlToProjectId} from './utils/projectMap';
 import {
-  useParams
+  useParams,
+  useHistory
 } from 'react-router-dom';
 import abi from '../api.json';
 import './ProjectPage.css';
@@ -11,7 +12,7 @@ const artblocksContract = "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270";
 
 function ProjectPage({web3, userAccount}) {
   const { projectName } = useParams();
-  
+  const history = useHistory();
 
   const [contract] = useState(new web3.eth.Contract(abi, artblocksContract));
   const [viewAccount, setViewAccount] = useState(null);
@@ -25,6 +26,16 @@ function ProjectPage({web3, userAccount}) {
       setViewAccount(userAccount);
     }
   }, [viewAccount, userAccount]);
+
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (viewAccount) {
+      params.append("collection", viewAccount);
+    } else {
+      params.delete("collection");
+    }
+    history.push({search: params.toString()});
+  }, [viewAccount]);
 
   if (!web3._provider) {
     return (<div className="test-net-warning">This site requires MetaMask</div>);
