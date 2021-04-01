@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import {artblocksUrl, artblocksApiUrl} from './consts';
 import {formatTokenId} from './utils/tokenId';
 import './ActivePieceDisplay.css';
-import projectMap from './utils/projectMap';
+import {projectMap} from './utils/projectMap';
 import FeaturesDisplay from './FeaturesDisplay';
 
 function ActivePieceDisplay({activeToken, setActiveToken, projectId}) {
@@ -21,7 +21,7 @@ function ActivePieceDisplay({activeToken, setActiveToken, projectId}) {
     return () => {
       document.removeEventListener("mousedown", handleClick);
     };
-  }, []);
+  }, [handleClick]);
 
   if (!activeToken) {
     return null;

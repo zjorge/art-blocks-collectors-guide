@@ -1,7 +1,7 @@
 import React from 'react';
 import './PieceStats.css';
 import {featureSet} from './utils/features';
-import projectMap from './utils/projectMap';
+import {projectMap} from './utils/projectMap';
 
 function PieceStats({tokens, projectId}) {
   if(!tokens) {

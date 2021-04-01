@@ -1,4 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import {
+  Route,
+  Switch,
+  Redirect,
+  BrowserRouter as Router,
+} from 'react-router-dom';
 import './App.css';
 import Web3 from 'web3';
 import MetaMaskButton from './components/MetaMaskButton';
@@ -28,21 +34,28 @@ function App() {
 
   
   return (
-    <div>
-      <nav>
-        <div className="title">Clamflelmo by Generative Artworks</div>
-        <MetaMaskButton 
-          web3={web3}
-          account={userAccount}
-          requestAccount={requestAccount}
-        />
-      </nav>
-      {network !== "main" && <div className="test-net-warning">This app only works on main net. Please check your MetaMask settings and try again.</div>}
-      <ProjectPage
-        web3={web3}
-        userAccount={userAccount}
-      />
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <div className="title">Clamflelmo by Generative Artworks</div>
+          <MetaMaskButton 
+            web3={web3}
+            account={userAccount}
+            requestAccount={requestAccount}
+          />
+        </nav>
+        {network !== "main" && <div className="test-net-warning">This app only works on main net. Please check your MetaMask settings and try again.</div>}
+        <Switch>
+          <Route path="/projects/:projectName">
+            <ProjectPage
+              web3={web3}
+              userAccount={userAccount}
+            />
+          </Route>
+          <Redirect to="/projects/empyrean"/>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

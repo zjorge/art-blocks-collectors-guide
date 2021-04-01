@@ -1,6 +1,6 @@
 import {empyreanFeatures} from './empyreanFeatureScript';
 
-const projectMap = {
+export const projectMap = {
   33: {
     featureScript: empyreanFeatures,
     features: {
@@ -27,4 +27,7 @@ const projectMap = {
   }
 }
 
-export default projectMap;
+export const urlToProjectId = {
+  "empyrean": 33,
+}
+
