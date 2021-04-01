@@ -8,20 +8,20 @@ import FeaturesDisplay from './FeaturesDisplay';
 function ActivePieceDisplay({activeToken, setActiveToken, projectId}) {
   const node = useRef();
 
-  // Check if click was inside of the piece card
-  const handleClick = e => {
-    if (node.current?.contains(e.target)) {
-      return;
-    }
-    setActiveToken(null);
-  }
-
   useEffect(() => {
+    // Check if click was inside of the piece card
+    const handleClick = e => {
+      if (node.current?.contains(e.target)) {
+        return;
+      }
+      setActiveToken(null);
+    }
+
     document.addEventListener("mousedown", handleClick);
     return () => {
       document.removeEventListener("mousedown", handleClick);
     };
-  }, [handleClick]);
+  }, [setActiveToken]);
 
   if (!activeToken) {
     return null;
