@@ -2,11 +2,14 @@ import React from 'react';
 import './MetaMaskButton.css';
 import {truncateAddress} from './utils/walletAddress';
 
-function MetaMaskButton({requestAccount, account}) {
+function MetaMaskButton({web3, requestAccount, account}) {
   if (account) {
     return (
       <div>{truncateAddress(account)}</div>
     )
+  }
+  if (!web3._provider) {
+    return null;
   }
 
   return (

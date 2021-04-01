@@ -5,7 +5,7 @@ import ActivePieceDisplay from './ActivePieceDisplay';
 function PieceBrowser({tokens, projectId}) {
   const [activeToken, setActiveToken] = useState(null);
 
-  if (!tokens.length) {
+  if (!tokens) {
     return null;
   }
 

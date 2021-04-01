@@ -4,7 +4,7 @@ import {featureSet} from './utils/features';
 import projectMap from './utils/projectMap';
 
 function PieceStats({tokens, projectId}) {
-  if(tokens.length === 0) {
+  if(!tokens) {
     return null;
   }
 
@@ -34,10 +34,10 @@ function PieceStats({tokens, projectId}) {
                   {featureName} 
                 </td>
                 <td className="center-column tooltip">
-                  {tokenFeatures[featureName].size}/{features[featureName].length}
+                  {tokenFeatures[featureName]?.size || 0}/{features[featureName].length}
                   <span className="tooltiptext">
                   {features[featureName].map((feature, index) => {
-                    return <span key={feature} className={tokenFeatures[featureName].has(feature) ? "has" : "missing"}>{index ? ', ': ''}{feature}</span> 
+                    return <span key={feature} className={tokenFeatures[featureName]?.has(feature) ? "has" : "missing"}>{index ? ', ': ''}{feature}</span> 
                   })}
                   </span>
                 </td>
