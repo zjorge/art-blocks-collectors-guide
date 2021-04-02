@@ -34,7 +34,7 @@ function App() {
 
   
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div>
         <nav>
           <div className="title">Clamflelmo by Generative Artworks</div>
