@@ -42,7 +42,7 @@ function ProjectView({projectId, account, contract}) {
   }
 
 
-  const projectTitle = projectInfo?.projectName;
+  const projectName = projectInfo?.projectName;
 
   return (
     <div>
@@ -51,7 +51,7 @@ function ProjectView({projectId, account, contract}) {
         tokens={tokens}
         projectId={projectId}
       />
-      <PieceBrowser tokens={tokens} projectId={projectId} projectTitle={projectTitle}/>
+      <PieceBrowser tokens={tokens} projectId={projectId} projectName={projectName}/>
     </div>
   );
 }

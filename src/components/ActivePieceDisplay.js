@@ -5,7 +5,7 @@ import './ActivePieceDisplay.css';
 import {projectMap} from './utils/projectMap';
 import FeaturesDisplay from './FeaturesDisplay';
 
-function ActivePieceDisplay({activeToken, setActiveToken, projectId, projectTitle}) {
+function ActivePieceDisplay({activeToken, setActiveToken, projectId, projectName}) {
   const node = useRef();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function ActivePieceDisplay({activeToken, setActiveToken, projectId, projectTitl
     };
   }, [setActiveToken]);
 
-  if (!activeToken || !projectTitle) {
+  if (!activeToken || !projectName) {
     return null;
   }
 
@@ -46,7 +46,7 @@ function ActivePieceDisplay({activeToken, setActiveToken, projectId, projectTitl
           />
         </div>
         <div className="info">
-          <h3>{projectTitle} #{formatTokenId(activeToken.id)}</h3>
+          <h3>{projectName} #{formatTokenId(activeToken.id)}</h3>
           <FeaturesDisplay
             features={projectMap[projectId].featureScript(activeToken.hash)}
           />
