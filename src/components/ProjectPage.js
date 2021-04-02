@@ -1,10 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import ViewAccountHandling from './ViewAccountHandling';
 import ProjectView from './ProjectView';
 import {urlToProjectId} from './utils/projectMap';
+import queryString from 'query-string';
 import {
   useParams,
-  useHistory
+  useHistory,
+  useLocation
 } from 'react-router-dom';
 import abi from '../api.json';
 import './ProjectPage.css';
@@ -12,30 +14,28 @@ const artblocksContract = "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270";
 
 function ProjectPage({web3, userAccount}) {
   const { projectName } = useParams();
+  const { search } = useLocation();
+  const queryParams = queryString.parse(search);
   const history = useHistory();
 
+  const viewAccount = queryParams.collection;
   const [contract] = useState(new web3.eth.Contract(abi, artblocksContract));
-  const [viewAccount, setViewAccount] = useState(null);
+
+  const setCollectionParam = useCallback((account) => {
+      const params = new URLSearchParams();
+      if (!account) {
+        params.delete(account);
+      } else {
+        params.append("collection", account);
+      }
+      history.push({search: params.toString()});
+  }, [history]);
 
   useEffect(() => {
-    setViewAccount(userAccount);
-  }, [userAccount]);
-
-  useEffect(() => {
-    if (viewAccount === null) {
-      setViewAccount(userAccount);
+    if (!viewAccount) {
+      setCollectionParam(userAccount);
     }
-  }, [viewAccount, userAccount]);
-
-  useEffect(() => {
-    const params = new URLSearchParams();
-    if (viewAccount) {
-      params.append("collection", viewAccount);
-    } else {
-      params.delete("collection");
-    }
-    history.push({search: params.toString()});
-  }, [viewAccount]);
+  }, [userAccount, viewAccount, setCollectionParam]);
 
   if (!web3._provider) {
     return (<div className="test-net-warning">This site requires MetaMask</div>);
@@ -60,7 +60,7 @@ function ProjectPage({web3, userAccount}) {
       <ViewAccountHandling
         contract={contract}
         projectId={projectId}
-        setViewAccount={setViewAccount}
+        setViewAccount={setCollectionParam}
         viewAccount={viewAccount}
         userAccount={userAccount}
       />
