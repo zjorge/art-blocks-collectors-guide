@@ -1,4 +1,4 @@
-import projectMap from './projectMap';
+import { projectMap } from './projectMap';
 
 export function featureSet(tokens, projectId) {
   const featureDescriptions = tokens.map((token) => {

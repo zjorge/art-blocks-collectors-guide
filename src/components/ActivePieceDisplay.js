@@ -1,18 +1,38 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {artblocksUrl, artblocksApiUrl} from './consts';
 import {formatTokenId} from './utils/tokenId';
 import './ActivePieceDisplay.css';
-import projectMap from './utils/projectMap';
+import {projectMap} from './utils/projectMap';
 import FeaturesDisplay from './FeaturesDisplay';
 
 function ActivePieceDisplay({activeToken, setActiveToken, projectId, projectTitle}) {
+  const node = useRef();
+
+  useEffect(() => {
+    // Check if click was inside of the piece card
+    const handleClick = e => {
+      if (node.current?.contains(e.target)) {
+        return;
+      }
+      setActiveToken(null);
+    }
+
+    document.addEventListener("mousedown", handleClick);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  }, [setActiveToken]);
+
   if (!activeToken || !projectTitle) {
     return null;
   }
 
   return (
-    <div className="active-piece-container">
-      <div className="active-piece-card">
+    <div className="active-piece-container"
+    >
+      <div className="active-piece-card"
+        ref={node}
+      >
         <div
           onClick={() => setActiveToken(null)}
           className="exit-button"

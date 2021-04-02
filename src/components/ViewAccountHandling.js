@@ -26,7 +26,7 @@ function ViewAccountHandling({contract, viewAccount, userAccount, setViewAccount
           className="random-account-button button" 
           onClick={getRandomAccount}
         >
-          Get Random Account
+          Get Random Collection
         </button>
       </div>
       {(viewAccount || userAccount) &&
