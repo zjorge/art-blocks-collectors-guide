@@ -17,7 +17,7 @@ function ProjectView({projectId, account, contract}) {
   useEffect(() => {
     if (!account) {
       setAllTokens(null);
-      return; 
+      return;
     }
 
     async function fetchTokens() {
@@ -30,10 +30,10 @@ function ProjectView({projectId, account, contract}) {
       }));
       setAllTokens(tokens);
     }
-    
+
     fetchTokens();
 
-   }, [account, contract]);
+  }, [account, contract]);
 
   const regex = new RegExp(`^${projectId}\\d+`, 'g');
   const tokens = !allTokens ? null : allTokens.filter(token => token.id.match(regex));
@@ -41,14 +41,17 @@ function ProjectView({projectId, account, contract}) {
     tokens.sort((tokenA, tokenB) => (tokenA.id < tokenB.id) ? -1: 1);
   }
 
+
+  const projectTitle = projectInfo?.projectName;
+
   return (
     <div>
-      <ProjectInformation 
+      <ProjectInformation
         projectInfo={projectInfo}
         tokens={tokens}
         projectId={projectId}
       />
-      <PieceBrowser tokens={tokens} projectId={projectId}/>
+      <PieceBrowser tokens={tokens} projectId={projectId} projectTitle={projectTitle}/>
     </div>
   );
 }
