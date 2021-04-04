@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import TokenGrid from './TokenGrid';
 import ActivePieceDisplay from './ActivePieceDisplay';
 
-function PieceBrowser({tokens, projectId}) {
+function PieceBrowser({tokens, projectId, projectName}) {
   const [activeToken, setActiveToken] = useState(null);
 
   if (!tokens) {
@@ -11,7 +11,7 @@ function PieceBrowser({tokens, projectId}) {
 
   return (
     <div>
-      <ActivePieceDisplay activeToken={activeToken} setActiveToken={setActiveToken} projectId={projectId}/>
+      <ActivePieceDisplay activeToken={activeToken} setActiveToken={setActiveToken} projectId={projectId} projectName={projectName}/>
       <TokenGrid tokens={tokens} setActiveToken={setActiveToken}/>
     </div>
   );
