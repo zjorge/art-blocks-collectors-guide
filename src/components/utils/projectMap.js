@@ -10,7 +10,7 @@ export const projectMap = {
       "Moves": ["False", "True"],
       "Color Animation": ["N/A", "Random", "Rotate", "Hue shift"],
       "Filled": ["False", "True"],
-      "Node style": ["Normal", "Just start point", "just endpoint", "Start point and endpoint"],
+      "Node style": ["Normal", "Just start point", "Just endpoint", "Start point and endpoint"],
       "Start point node style": ["N/A", "Circle", "Square", "Triangle", "Cross", "Asterisk"],
       "Endpoint node style": ["N/A", "Circle", "Square", "Triangle", "Cross", "Asterisk"],
       "Nodes filled": ["N/A", "False", "True"],
