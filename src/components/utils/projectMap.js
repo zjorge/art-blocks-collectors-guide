@@ -5,6 +5,8 @@ export const projectMap = {
     featureScript: empyreanFeatures,
     features: {
       "Size": ["Small", "Normal", "Large"],
+      "Line amount": ["Low", "Normal", "High"],
+      "Point amount": ["Very low", "Low", "Normal", "High", "Very high"],
       "Line style": ["Loopy", "Neat loopy", "Straight"],
       "Color scheme": ["Grayscale", "Monochromatic", "Full spectrum"],
       "Moves": ["False", "True"],

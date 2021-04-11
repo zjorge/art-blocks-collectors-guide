@@ -19,6 +19,26 @@ export function empyreanFeatures(tokenData) {
       lineStyle = 'Straight'
   }
 
+  let lineAmount = 'Normal';
+  const lineNum = map_v(0, 20, 200);
+  if (lineNum < 56) {
+    lineAmount = 'Low';
+  } else if (lineNum > 164) {
+    lineAmount = 'High';
+  }
+
+  let pointAmount = 'Normal';
+  const pointNum = map_v(1, 10, 500);
+  if (pointNum < 59) {
+    pointAmount = 'Very low';
+  } else if (pointNum < 151) {
+    pointAmount = 'Low';
+  } else if (pointNum > 451) {
+    pointAmount = 'Very high';
+  } else if (pointNum > 353) {
+    pointAmount = 'High';
+  }
+
   let randomEndpoints = map_v(3) < 0.2 ? 'True' : 'False';
   let hasBorder = map_v(4) < 0.38 ? 'True' : 'False';
   let isFill = map_v(5) < 0.15 ? 'True' : 'False';
@@ -151,6 +171,8 @@ export function empyreanFeatures(tokenData) {
 
   return {
       "Size": size,
+      "Line amount": lineAmount,
+      "Point amount": pointAmount,
       "Line style": lineStyle,
       "Color scheme": colorScheme,
       "Moves": doesMove,
