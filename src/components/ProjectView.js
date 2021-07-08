@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import PieceBrowser from './PieceBrowser';
 import ProjectInformation from './ProjectInformation';
 import {fetchProjectTokensForAccount} from './utils/tokens';
+import {fetchProjectDetails} from './utils/projects';
 
 function ProjectView({projectId, account, contract}) {
 
@@ -9,10 +10,10 @@ function ProjectView({projectId, account, contract}) {
   const [allTokens, setAllTokens] = useState(null);
 
   useEffect(() => {
-    async function fetchProjectDetails() {
-      setProjectInfo(await contract.methods.projectDetails(projectId).call());
+    async function setProjectDetails() {
+      setProjectInfo(await fetchProjectDetails(contract, projectId));
     }
-    fetchProjectDetails();
+    setProjectDetails();
   }, [projectId, contract]);
 
   useEffect(() => {
