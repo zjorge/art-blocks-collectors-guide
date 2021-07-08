@@ -45,7 +45,6 @@ class Styles {
 }
 
 export function enchiridionFeatures(tokenData) {
-  console.log(tokenData);
   const hashPairs = [];
   for (let j = 0; j < 32; j++) {
     hashPairs.push(tokenData.hash.slice(2 + j * 2, 4 + j * 2));
