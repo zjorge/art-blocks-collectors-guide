@@ -1,4 +1,5 @@
 import {empyreanFeatures} from './empyreanFeatureScript';
+import {enchiridionFeatures} from './enchiridionFeatureScript';
 
 export const projectMap = {
   33: {
@@ -26,10 +27,21 @@ export const projectMap = {
       "Color animation speed": ["N/A", "Very slow", "Slow", "Normal", "Fast"],
       "Max node rotation": ["N/A", "Small", "Medium", "Large"],
     }
+  },
+  101: {
+    featureScript: enchiridionFeatures,
+    features: {
+      "Color Palette": ["LAVENDER", "OFF(BLACK + WHITE)", "REEF", "BRICK", "DOLPHIN", "OAXACA", "MERCIA", "WHO ATE THE CRANS?", "MOSS AGATE", "FIREWATER", "FAST Ag"],
+      "Color Cohesion": ["Mono", "High", "Normal", "Random"],
+      "Has Background": ["False", "True"],
+      "Rectangle Decoration": ["None", "Perpendicular Lines", "Parallel Lines", "Mixed Lines (Random)", "Mixed Lines (Noise)", "Cross Hatch", "Specks (Random)", "Specks (Grid)", "Random (Random)", "Random (Noise)", "Gradient",],
+      "Split Style": ["None", "Horizontal", "Vertical", "Grid", "Partition"],
+    }
   }
 }
 
 export const urlToProjectId = {
   "empyrean": 33,
+  "enchiridion": 101
 }
 

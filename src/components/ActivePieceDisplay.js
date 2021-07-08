@@ -48,7 +48,7 @@ function ActivePieceDisplay({activeToken, setActiveToken, projectId, projectName
         <div className="info">
           <h3>{projectName} #{formatTokenId(activeToken.id)}</h3>
           <FeaturesDisplay
-            features={projectMap[projectId].featureScript(activeToken.hash)}
+            features={projectMap[projectId].featureScript(activeToken)}
           />
           <a href={`${artblocksUrl}/token/${activeToken.id}`}>View on Art Blocks</a>
         </div>
