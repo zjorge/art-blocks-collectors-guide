@@ -1,8 +1,7 @@
 import React from 'react';
 import './TokenImageGrid.css';
-import {artblocksApiUrl} from './consts';
+import ArtBlocksImage from './ArtBlocksImage';
 import {formatTokenId} from './utils/tokenId';
-
 
 function TokenImageGrid({tokens, setActiveToken}) {
   const onTokenClick = (token) => {
@@ -20,10 +19,9 @@ function TokenImageGrid({tokens, setActiveToken}) {
             onClick={onTokenClick(token)}
             key={token.id}
           >
-            <img 
-              className="token-image"
-              src={`${artblocksApiUrl}/image/${token.id}`}
-              alt={token.id}
+            <ArtBlocksImage
+              cname="token-image"
+              token={token}
             />
             <div className="hover-container">
               <div className="hover-text">

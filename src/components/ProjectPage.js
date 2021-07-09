@@ -10,7 +10,7 @@ import {
 } from 'react-router-dom';
 import abi from '../api.json';
 import './ProjectPage.css';
-const artblocksContract = "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270";
+import {artblocksContract} from './consts';
 
 function ProjectPage({web3, userAccount}) {
   const { projectName } = useParams();

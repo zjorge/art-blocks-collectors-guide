@@ -2,13 +2,14 @@ import React, { useState, useEffect, useCallback } from 'react';
 import {
   Route,
   Switch,
-  Redirect,
   BrowserRouter as Router,
+  Link,
 } from 'react-router-dom';
 import './App.css';
 import Web3 from 'web3';
 import MetaMaskButton from './components/MetaMaskButton';
 import ProjectPage from './components/ProjectPage';
+import Home from './components/home/Home';
 
 function App() {
   const [userAccount, setUserAccount] = useState(null);
@@ -37,7 +38,7 @@ function App() {
     <Router basename={process.env.PUBLIC_URL}>
       <div>
         <nav>
-          <div className="title">Clamflelmo by Generative Artworks</div>
+          <Link className="nav-link" to="/"><div className="title">Generative Artworks</div></Link>
           <MetaMaskButton 
             web3={web3}
             account={userAccount}
@@ -52,7 +53,12 @@ function App() {
               userAccount={userAccount}
             />
           </Route>
-          <Redirect to="/projects/empyrean"/>
+          <Route path="/">
+            <Home
+              web3={web3}
+              userAccount={userAccount}
+            />
+          </Route>
         </Switch>
       </div>
     </Router>

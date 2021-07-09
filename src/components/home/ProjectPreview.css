@@ -1,0 +1,19 @@
+.project-preview-container {
+    display: flex;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.preview-image {
+    width: 100px;
+}
+
+.project-title {
+    margin: 0px;
+}
+
+.info-container {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}

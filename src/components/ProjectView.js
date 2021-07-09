@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import PieceBrowser from './PieceBrowser';
 import ProjectInformation from './ProjectInformation';
+import {fetchProjectTokensForAccount} from './utils/tokens';
+import {fetchProjectDetails} from './utils/projects';
 
 function ProjectView({projectId, account, contract}) {
 
@@ -8,39 +10,20 @@ function ProjectView({projectId, account, contract}) {
   const [allTokens, setAllTokens] = useState(null);
 
   useEffect(() => {
-    async function fetchProjectDetails() {
-      setProjectInfo(await contract.methods.projectDetails(projectId).call());
+    async function setProjectDetails() {
+      setProjectInfo(await fetchProjectDetails(contract, projectId));
     }
-    fetchProjectDetails();
+    setProjectDetails();
   }, [projectId, contract]);
 
   useEffect(() => {
-    if (!account) {
-      setAllTokens(null);
-      return;
+    async function setUserTokens() {
+      setAllTokens(await fetchProjectTokensForAccount(contract, account, projectId));
     }
 
-    async function fetchTokens() {
-      const ids = await contract.methods.tokensOfOwner(account).call();
-      const tokens = await Promise.all(ids.map(async (id) => {
-        return {
-          id,
-          hash: await contract.methods.tokenIdToHash(id).call()
-        };
-      }));
-      setAllTokens(tokens);
-    }
+    setUserTokens();
 
-    fetchTokens();
-
-  }, [account, contract]);
-
-  const regex = new RegExp(`^${projectId}\\d+`, 'g');
-  const tokens = !allTokens ? null : allTokens.filter(token => token.id.match(regex));
-  if (tokens) {
-    tokens.sort((tokenA, tokenB) => (tokenA.id < tokenB.id) ? -1: 1);
-  }
-
+  }, [account, contract, projectId]);
 
   const projectName = projectInfo?.projectName;
 
@@ -48,10 +31,10 @@ function ProjectView({projectId, account, contract}) {
     <div>
       <ProjectInformation
         projectInfo={projectInfo}
-        tokens={tokens}
+        tokens={allTokens}
         projectId={projectId}
       />
-      <PieceBrowser tokens={tokens} projectId={projectId} projectName={projectName}/>
+      <PieceBrowser tokens={allTokens} projectId={projectId} projectName={projectName}/>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 export function empyreanFeatures(tokenData) {
   const hashPairs = [];
   for (let j = 0; j < 32; j++) {
-    hashPairs.push(tokenData.slice(2 + j * 2, 4 + j * 2));
+    hashPairs.push(tokenData.hash.slice(2 + j * 2, 4 + j * 2));
   }
 
   const decPairs = hashPairs.map((x) => parseInt(x, 16));
