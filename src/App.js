@@ -8,7 +8,7 @@ import './App.css';
 import Web3 from 'web3';
 import MetaMaskButton from './components/MetaMaskButton';
 import ProjectPage from './components/ProjectPage';
-import Home from './components/Home';
+import Home from './components/home/Home';
 
 function App() {
   const [userAccount, setUserAccount] = useState(null);
