@@ -3,7 +3,7 @@ import {isAddress} from './utils/walletAddress';
 import './AccountInput.css';
 import './button.css';
 
-function AccountInput({setAccount, userAccount}) {
+function AccountInput({setAccount, userAccount, web3}) {
   const [inputAccount, setInputAccount] = useState("");
   const [error, setError] = useState("");
 
@@ -11,7 +11,7 @@ function AccountInput({setAccount, userAccount}) {
     setInputAccount(event.target.value);
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     if (inputAccount === "") {
@@ -20,13 +20,18 @@ function AccountInput({setAccount, userAccount}) {
       return;
     }
 
-    if (!isAddress(inputAccount)) {
+    if (isAddress(inputAccount)) {
+      setError("");
+      setAccount(inputAccount);
+    }
+
+    try {
+      const walletAddress = await web3.eth.ens.getAddress(inputAccount);
+      setAccount(walletAddress);
+    } catch {
       setError("Address is not valid");
       return;
     }
-
-    setError("");
-    setAccount(inputAccount);
   }
 
   return (

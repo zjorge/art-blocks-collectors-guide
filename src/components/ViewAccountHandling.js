@@ -4,7 +4,7 @@ import {truncateAddress} from './utils/walletAddress';
 import './ViewAccountHandling.css';
 import './button.css';
 
-function ViewAccountHandling({contract, viewAccount, userAccount, setViewAccount, projectId}) {
+function ViewAccountHandling({contract, viewAccount, userAccount, setViewAccount, projectId, web3}) {
   async function getRandomAccount() {
     const tokens = await contract.methods.projectShowAllTokens(projectId).call();
     const owners = new Set();
@@ -19,6 +19,7 @@ function ViewAccountHandling({contract, viewAccount, userAccount, setViewAccount
     <div className="container">
       <div className="account-search-container">
         <AccountInput
+          web3={web3}
           setAccount={setViewAccount}
           userAccount={userAccount}
         />

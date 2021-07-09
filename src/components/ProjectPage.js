@@ -58,6 +58,7 @@ function ProjectPage({web3, userAccount}) {
   return (
     <div>
       <ViewAccountHandling
+        web3={web3}
         contract={contract}
         projectId={projectId}
         setViewAccount={setCollectionParam}
