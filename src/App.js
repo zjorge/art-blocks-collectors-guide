@@ -3,6 +3,7 @@ import {
   Route,
   Switch,
   BrowserRouter as Router,
+  Link,
 } from 'react-router-dom';
 import './App.css';
 import Web3 from 'web3';
@@ -37,7 +38,7 @@ function App() {
     <Router basename={process.env.PUBLIC_URL}>
       <div>
         <nav>
-          <div className="title">Generative Artworks</div>
+          <Link className="nav-link" to="/"><div className="title">Generative Artworks</div></Link>
           <MetaMaskButton 
             web3={web3}
             account={userAccount}

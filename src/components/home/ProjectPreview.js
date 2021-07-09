@@ -5,7 +5,6 @@ import {
   useHistory,
 } from 'react-router-dom';
 import ArtBlocksImage from '../ArtBlocksImage';
-import '../button.css';
 import './ProjectPreview.css';
 
 function ProjectPreview({account, contract, projectId, projectUrl}) {
@@ -46,20 +45,20 @@ function ProjectPreview({account, contract, projectId, projectUrl}) {
   }
 
   return (
-    <div>
-      <h3>{projectDetails.projectName}</h3>
+    <div 
+      className="project-preview-container"
+      onClick={onButtonClick}
+    >
       {previewToken && <ArtBlocksImage
         cname="preview-image"
         token={previewToken}
       />}
-      <div>{projectDetails.description}</div>
-      {allTokens && <div>Owned: {allTokens.length}</div>}
-      <button 
-        className="button" 
-        onClick={onButtonClick}
-      >
-        View Collection
-      </button>
+      <div className="info-container">
+        <div>
+          <h3 className="project-title">{projectDetails.projectName}</h3>
+          {allTokens && <div>Owned: {allTokens.length}</div>}
+        </div>
+      </div>
     </div>
   );
 }
