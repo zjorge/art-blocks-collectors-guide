@@ -5,3 +5,7 @@
 .bold-text {
     font-weight: bold;
 }
+
+.printed-pieces-ul {
+    margin: 0;
+}

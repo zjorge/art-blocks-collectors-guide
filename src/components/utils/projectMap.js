@@ -36,7 +36,11 @@ export const projectMap = {
       "Has Background": ["False", "True"],
       "Rectangle Decoration": ["None", "Perpendicular Lines", "Parallel Lines", "Mixed Lines (Random)", "Mixed Lines (Noise)", "Cross Hatch", "Specks (Random)", "Specks (Grid)", "Random (Random)", "Random (Noise)", "Gradient",],
       "Split Style": ["None", "Horizontal", "Vertical", "Grid", "Partition"],
-    }
+    },
+    printedPieces: [
+      0, 
+      1,
+    ]
   }
 }
 
