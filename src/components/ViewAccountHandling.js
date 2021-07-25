@@ -16,7 +16,7 @@ function ViewAccountHandling({contract, viewAccount, userAccount, setViewAccount
   };
 
   return (
-    <div className="container">
+    <div className="view-account-container">
       <div className="account-search-container">
         <AccountInput
           web3={web3}
